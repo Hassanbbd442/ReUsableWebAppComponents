@@ -1,0 +1,41 @@
+.circular-progress-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.progress-circle {
+    width: 50px;
+    height: 50px;
+    animation: rotate 2s linear infinite;
+}
+
+.progress-path {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 4;
+    stroke-dasharray: 126; /* Circumference of the circle */
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 126;
+    }
+    50% {
+        stroke-dashoffset: 63;
+        transform: rotate(45deg);
+    }
+    100% {
+        stroke-dashoffset: 126;
+        transform: rotate(360deg);
+    }
+}
